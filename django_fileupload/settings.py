@@ -25,8 +25,9 @@ SECRET_KEY = 's=vnw$gk9(lzd$ll@le&u7r$8jjz-*ss%_u+kb62+rn=0p3#q-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# Pythonanywhere用の設定を追加
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+ALLOWED_HOSTS = ['localhost', '.pythonanywhere.com']
 
 # Application definition
 
