@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<h1 class="cl04">■　4.ギャラリーキャプションあり</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <table>
+    		<tr>
+    			<th>textファイル：</th>
+    			<td><input type="file" name="testfile"></td>
+    		</tr>
+    		<tr>
+    			<th>画像ファイルのパス：</th>
+    			<td><input type="pass" name="pass" required id="pass" /></td>
+    		</tr>
+    </table>
+
+	
+
+    <button type="submit">アップロード</button>
+</form>
+{% if uploaded_file_url %}
+    <p class="dw-text">編集後ファイル<a href="{{ csvlink }}" class="btn01">ダウンロード</a></p>
+{% endif %}
+
+<div class="info">
+<p>・「1.ABStextファイルをCSVに変換」で作成したCSVファイルから<br>　ギャラリー画像部分のセルをコピーしtextファイルを作成する。</p>
+<p><a href="{% static 'sampletext/text-gallery.txt' %}" target="_blank">※サンプルファイル参照</a></p>
+<a href="{% static 'images/gallerysample.jpg' %}" target="_blank"><img src="{% static 'images/gallerysample.jpg' %}" alt="※サンプルファイル参照"></a>
+<p>・本サーバー用の画像のパスを「画像ファイルのパス：」へ入力する<br>
+　<span>例：/theme/ababai/images/abs/interview/uploads/</span></p>
+</div>
+
+<p class="btn"><a href="{% url 'index' %}">戻る</a></p>
+
+{% endblock %}

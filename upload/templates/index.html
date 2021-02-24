@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>■ ABS→ABALUCK　DB変換システム</h1>
+    <ul class="list">
+        <li><a href="{% url 'basic' %}">1.ABStextファイルをCSVに変換</a></li>
+        <li><a href="{% url 'images' %}">2.単一画像ファイル</a></li>
+        <li><a href="{% url 'gallery' %}">3.ギャラリーキャプションなし</a></li>
+        <li><a href="{% url 'gallerycap' %}">4.ギャラリーキャプションあり</a></li>
+    </ul>
+
+
+
+
+
+{% endblock content %}

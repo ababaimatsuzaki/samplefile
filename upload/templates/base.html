@@ -1,0 +1,31 @@
+{% load static %}<!DOCTYPE html>
+<html>
+<head>
+{% block title_outer %}
+  <title>{% block title %}{{ site.name }}{% endblock %}</title>
+{% endblock %}
+
+{% block meta %}
+  <meta charset="utf-8">
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
+
+{% block extra_head %}
+{% endblock %}
+<link href="{% static 'common.css' %}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700,900&display=swap" rel="stylesheet">
+</head>
+<body class="f-noto">
+{% block body %}
+{% block content %}{% endblock %}
+{% endblock %}
+
+{% block extra_foot %}{% endblock %}
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+{% block javascript %}{% endblock %}
+</body>
+</html>
